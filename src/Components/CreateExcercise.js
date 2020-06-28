@@ -6,7 +6,6 @@ import "react-datepicker/dist/react-datepicker.css";
 export default class CreateExcercise extends Component {
     constructor(props) {
         super(props);
-
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
@@ -22,10 +21,11 @@ export default class CreateExcercise extends Component {
         }
     }
 
+    //Life cycle method
     componentDidMount() {
         this.setState({
-            users: ['test user'],
-            username: 'test user'
+            users: ['John Cena'],
+            username: 'John Cena'
         })
     }
 
@@ -35,27 +35,27 @@ export default class CreateExcercise extends Component {
     // const [date, setDate] = useState("");
     // const [user, setUser] = useState([]);
 
-    onChangeUsername =(e) => {
-        this.state({
+    onChangeUsername(e) {
+        this.setState({
             username: e.target.value
         });
     }
 
-    onChangeDescription = (e) => {
-        this.state({
+    onChangeDescription(e) {
+        this.setState({
             description: e.target.value
         });
     }
 
-    onChangeDuration =(e) => {
-        this.state({
+    onChangeDuration(e) {
+        this.setState({
             duration: e.target.value
         });
     }
 
-    onChangeDate = (e) => {
-        this.state({
-            date: e.target.value
+    onChangeDate (date) {
+        this.setState({
+            date: date
         });
     }  
 
@@ -65,7 +65,7 @@ export default class CreateExcercise extends Component {
         const exercise = {
             username: this.state.username,
             description: this.state.description,
-            duration: this.state.description,
+            duration: this.state.duration,
             date: this.state.date
         }
         console.log(exercise)
